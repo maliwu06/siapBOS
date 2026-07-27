@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id" class="dark h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAP BOS v3.0 - Sistem Informasi Administrasi Pertanggungjawaban BOS</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#38bdf8',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 4s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { opacity: '0.3', transform: 'scale(0.98)' },
+                            '100%': { opacity: '0.6', transform: 'scale(1.02)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .btn-glow {
+            position: relative;
+        }
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #0284c7, #10b981);
+            border-radius: 1rem;
+            z-index: -1;
+            filter: blur(12px);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        .btn-glow:hover::before {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col justify-between selection:bg-sky-500 selection:text-white overflow-x-hidden">
+
+    <!-- Background Ambient Glows -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sky-600/15 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-emerald-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293708_1px,transparent_1px),linear-gradient(to_bottom,#1f293708_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+    </div>
+
+    <!-- Top Minimal Bar -->
+    <header class="relative z-10 w-full max-w-5xl mx-auto px-6 pt-6 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <!-- Header Logo Lingkaran Presisi -->
+            <div class="w-9 h-9 rounded-full bg-slate-900 border border-sky-500/30 p-0.5 shadow-md flex items-center justify-center overflow-hidden">
+                <img src="https://i.ibb.co.com/SXGrcCSn/LOGO-SIAP-BOS.png" 
+                     alt="SIAP BOS Logo" 
+                     class="w-full h-full object-contain rounded-full">
+            </div>
+            <span class="font-bold text-base tracking-tight text-white">SIAP <span class="text-sky-400">BOS</span></span>
+        </div>
+        
+        <div>
+            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-slate-800/80 text-emerald-400 border border-emerald-500/20 font-medium flex items-center">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-ping"></span>
+                v3.0 Online
+            </span>
+        </div>
+    </header>
+
+    <!-- Main Center Portal Section -->
+    <main class="relative z-10 flex-1 flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-lg">
+            
+            <!-- Floating Glowing Frame -->
+            <div class="relative">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-sky-500 via-emerald-500 to-blue-600 rounded-3xl blur-md opacity-30 animate-glow"></div>
+                
+                <div class="relative glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border border-slate-700/60 text-center">
+                    
+                    <!-- Emblem Logo SIAP BOS Lingkaran Presisi + Glow -->
+                    <div class="relative w-32 h-32 sm:w-36 sm:h-36 mx-auto mb-6 flex items-center justify-center group">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-sky-500/30 via-emerald-500/20 to-blue-500/30 blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                        
+                        <div class="relative w-full h-full rounded-full p-2 bg-slate-900/90 border border-sky-500/30 shadow-2xl flex items-center justify-center overflow-hidden group-hover:border-sky-400/60 transition-colors duration-300">
+                            <img src="https://i.ibb.co.com/SXGrcCSn/LOGO-SIAP-BOS.png" 
+                                 alt="SIAP BOS Logo" 
+                                 class="w-full h-full object-contain rounded-full drop-shadow-[0_8px_16px_rgba(2,132,199,0.4)] group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+
+                    <!-- Title & Subtitle -->
+                    <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+                        SIAP <span class="text-sky-400">BOS</span> <span class="text-xs px-2 py-0.5 rounded-md bg-sky-500/20 text-sky-300 border border-sky-500/30 align-middle">v3.0</span>
+                    </h1>
+                    <p class="text-xs font-semibold text-sky-400/90 tracking-widest uppercase mb-4">
+                        Sistem Informasi Administrasi Pertanggungjawaban BOS
+                    </p>
+
+                    <!-- Quote Tagline -->
+                    <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 mb-6">
+                        <p class="text-xs text-slate-300 italic font-medium">
+                            “Kelola Dana BOS dengan Transparan, Akuntabel, dan Bertanggungjawab”
+                        </p>
+                    </div>
+
+                    <!-- 4 Core Pillars Pills -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8">
+                        <div class="bg-slate-900/80 border border-slate-800 py-1.5 px-2 rounded-lg text-[10px] font-semibold text-slate-300 flex items-center justify-center space-x-1">
+                            <i class="fa-solid fa-shield-halved text-sky-400 text-[10px]"></i>
+                            <span>Transparan</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 py-1.5 px-2 rounded-lg text-[10px] font-semibold text-slate-300 flex items-center justify-center space-x-1">
+                            <i class="fa-solid fa-chart-line text-emerald-400 text-[10px]"></i>
+                            <span>Akuntabel</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 py-1.5 px-2 rounded-lg text-[10px] font-semibold text-slate-300 flex items-center justify-center space-x-1">
+                            <i class="fa-solid fa-lock text-indigo-400 text-[10px]"></i>
+                            <span>Aman</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 py-1.5 px-2 rounded-lg text-[10px] font-semibold text-slate-300 flex items-center justify-center space-x-1">
+                            <i class="fa-solid fa-arrows-rotate text-amber-400 text-[10px]"></i>
+                            <span>Terintegrasi</span>
+                        </div>
+                    </div>
+
+                    <!-- Primary Action CTA Button -->
+                    <a href="https://script.google.com/macros/s/AKfycbzBJQgrrQPwtCPbsYDJ-rrCuI0hglu8h-dKggAwgh-Xb4ycZUkHzMUXUL0OhKA6Kotlcw/exec" 
+                       target="_blank" 
+                       class="btn-glow w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-white font-bold text-sm tracking-wide transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center space-x-2.5 shadow-lg">
+                        <span>MASUK APLIKASI SIAP BOS</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <!-- Status Indicator Footnote -->
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                        <span class="flex items-center text-emerald-400 font-medium">
+                            <i class="fa-solid fa-cloud text-[10px] mr-1.5"></i> Google Cloud Engine
+                        </span>
+                        <span>NPSN Workspace Ready</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="relative z-10 w-full max-w-5xl mx-auto px-6 py-4 text-center text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between border-t border-slate-900">
+        <div>
+            <span>&copy; SIAP BOS v3.0 • Web App Engine</span>
+        </div>
+        <div class="mt-2 sm:mt-0">
+            <span>Created / Laporan By: <strong class="text-slate-300">H. Maliwu</strong></span>
+        </div>
+    </footer>
+
+</body>
+</html>
